@@ -1,4 +1,4 @@
-###Introduction
+### Introduction
 The application determines efficient route and delivery distributions for a list of packages and corresponding location distance data, loaded from CSV files, for a package delivery service. Packages are sorted and distributed among three delivery trucks with the following restrictions:
 - The service has 3 available trucks and 2 available truck drivers.
 - Each package will have a unique identifier and the maximum capacity for each truck is 16 packages.
@@ -9,7 +9,7 @@ The application determines efficient route and delivery distributions for a list
 - In addition, a package note may indicate that the wrong delivery address is listed. For packages with this designation, the delivery address will not be known until 10:20 AM and therefore cannot depart the hub facility until that time.
 - If a package includes a delivery deadline time, it must arrive at the destination address prior to the stated time.
 
-###Summary of Primary Algorithm
+### Summary of Primary Algorithm
 The primary algorithm used in scheduling package deliveries is Dijkstra’s shortest path algorithm. Given a graph of nodes and a starting node, this algorithm determines the shortest path from the starting node to each node in the graph. While doing so, a pointer is maintained to reference previously visited shortest path nodes.
 For further clarification, this solution uses all three of the available delivery trucks:
 - The first truck delivers only priority (early deadline) and packages annotated to be grouped. Upon completion, the driver of this truck returns to the hub facility so that they can drive the delayed truck (see “truck three” below).
