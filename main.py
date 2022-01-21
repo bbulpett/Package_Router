@@ -1,6 +1,5 @@
 # Barnabas Bulpett
-# C950 Data Structures and Algorithms II
-# Performance Assessment NHP2 - "WGUPS Routing Program"
+# Package Routing Program"
 
 import re
 from packages import Packages
@@ -18,9 +17,9 @@ class Main:
     distance_graph = Graph()  # Create new undirected graph
 
     # Load packages from CSV into hash table
-    load_package_data('WGUPS-Package-File.csv', package_hash)
+    load_package_data('Package-File.csv', package_hash)
     # Load distances from CSV into graph
-    load_distance_data('WGUPS-Distance-Table.csv', distance_graph)
+    load_distance_data('Distance-Table.csv', distance_graph)
 
     # Determine starting node location ("hub location")
     vertices_list = list(distance_graph.vertices.keys())
@@ -33,7 +32,7 @@ class Main:
     schedule_trucks(distance_graph, package_hash, start_node, truck_list)
 
     # Display user interface menu
-    print("\nWGUPS Routing Program")
+    print("\Package Routing Program")
     print("--------------------")
 
     entry = True
